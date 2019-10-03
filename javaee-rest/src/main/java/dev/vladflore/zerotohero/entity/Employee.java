@@ -8,5 +8,8 @@ import lombok.Data;
 public class Employee {
     private String firstName;
     private String lastName;
-    private Integer age;
+    private Integer dayOfBirth;
+    private Integer monthOfBirth;
+    private Integer yearOfBirth;
+    private Integer salary;
 }

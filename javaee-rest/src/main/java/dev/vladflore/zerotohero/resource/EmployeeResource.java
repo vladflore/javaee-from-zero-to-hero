@@ -1,6 +1,6 @@
 package dev.vladflore.zerotohero.resource;
 
-import dev.vladflore.zerotohero.repository.EmployeeRepository;
+import dev.vladflore.zerotohero.mapper.EmployeeMapper;
 import dev.vladflore.zerotohero.service.EmployeeService;
 
 import javax.inject.Inject;
@@ -19,7 +19,7 @@ public class EmployeeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response retrieveEmployees() {
-        return Response.ok(employeeService.loadEmployees()).build();
+        return Response.ok(EmployeeMapper.INSTANCE.toDto(employeeService.loadEmployees())).build();
     }
 
 }
