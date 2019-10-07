@@ -12,4 +12,5 @@ public class Employee {
     private Integer monthOfBirth;
     private Integer yearOfBirth;
     private Integer salary;
+    private Address address;
 }

@@ -6,7 +6,8 @@ public class EmployeeFactory {
                                           Integer dayOfBirth,
                                           Integer monthOfBirth,
                                           Integer yearOfBirth,
-                                          Integer salary) {
+                                          Integer salary,
+                                          Address address) {
         return Employee.builder()
                 .firstName(firstName)
                 .lastName(lastName)
@@ -14,6 +15,7 @@ public class EmployeeFactory {
                 .monthOfBirth(monthOfBirth)
                 .yearOfBirth(yearOfBirth)
                 .salary(salary)
+                .address(address)
                 .build();
     }
 }

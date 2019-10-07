@@ -19,7 +19,7 @@ public class EmployeeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response retrieveEmployees() {
-        return Response.ok(EmployeeMapper.INSTANCE.toDto(employeeService.loadEmployees())).build();
+        return Response.ok(EmployeeMapper.INSTANCE.employeeToEmployeeDto(employeeService.loadEmployees())).build();
     }
 
 }
