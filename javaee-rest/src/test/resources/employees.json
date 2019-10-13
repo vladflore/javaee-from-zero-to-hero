@@ -1,0 +1,26 @@
+[
+  {
+    "address": {
+      "country": "GERMANY",
+      "location": "Location",
+      "plz": "90443",
+      "streetAndNumber": "Street 15"
+    },
+    "age": 33,
+    "fullName": "John Doe",
+    "initials": "JD",
+    "salary": 1000
+  },
+  {
+    "address": {
+      "country": "GERMANY",
+      "location": "Location",
+      "plz": "90443",
+      "streetAndNumber": "Street 15"
+    },
+    "age": 33,
+    "fullName": "Jane Doe",
+    "initials": "JD",
+    "salary": 1500
+  }
+]

@@ -1,9 +1,8 @@
-package dev.vladflore.zerotohero.mapper;
-
 import dev.vladflore.zerotohero.dto.EmployeeDto;
 import dev.vladflore.zerotohero.entity.Address;
 import dev.vladflore.zerotohero.entity.AddressFactory;
 import dev.vladflore.zerotohero.entity.Employee;
+import dev.vladflore.zerotohero.mapper.EmployeeMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
