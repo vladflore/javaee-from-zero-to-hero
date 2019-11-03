@@ -1,0 +1,84 @@
+== Notes
+=== A note
+==== Some other note
+===== Yet another note
+
+https://asciidoctor.org/[asciidoc] +
+https://powerman.name/doc/asciidoc[asciidoc cheat sheet]
+
+.This is a title
+    for indented paragraph.
+
+.This is some *Java* code
+[source,java]
+private static final String DELIMITER = "/";
+
+.A note
+NOTE::
+Some simple note.
+
+[NOTE]
+A single-paragraph note.
+
+TIP: tip
+
+IMPORTANT: important
+
+WARNING: warning
+
+CAUTION: caution
+
+.Whatever
+----
+Some nonsense text.
+----
+
+.Whatever
+****
+Some nonsense text.
+****
+
+forced +
+line break.
+
+.A table
+|==================
+|Col1   |Col2   |Col3
+|1      |11     |111
+|2      |22     |222
+|3      |33     |333
+|==================
+
+[ditaa, "ditaa-diagram"]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+http://plantuml.com/guide[plantuml]
+
+[plantuml, diagram-classes, png]
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
