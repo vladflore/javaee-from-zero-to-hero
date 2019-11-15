@@ -1,12 +1,12 @@
-package dev.vladflore.zerotohero.repository;
+package dev.vladflore.javaeezerotohero.repository;
 
-import dev.vladflore.zerotohero.entity.Address;
-import dev.vladflore.zerotohero.entity.AddressFactory;
-import dev.vladflore.zerotohero.entity.Employee;
+import dev.vladflore.javaeezerotohero.entity.Address;
+import dev.vladflore.javaeezerotohero.entity.AddressFactory;
+import dev.vladflore.javaeezerotohero.entity.Employee;
 
 import java.util.List;
 
-import static dev.vladflore.zerotohero.entity.EmployeeFactory.createEmployee;
+import static dev.vladflore.javaeezerotohero.entity.EmployeeFactory.createEmployee;
 import static java.util.Arrays.asList;
 
 public class EmployeeRepository {

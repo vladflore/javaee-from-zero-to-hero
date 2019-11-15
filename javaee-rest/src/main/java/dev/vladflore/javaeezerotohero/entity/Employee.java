@@ -1,4 +1,4 @@
-package dev.vladflore.zerotohero.entity;
+package dev.vladflore.javaeezerotohero.entity;
 
 import lombok.Builder;
 import lombok.Data;

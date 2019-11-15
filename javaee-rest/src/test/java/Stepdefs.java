@@ -2,7 +2,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import dev.vladflore.zerotohero.dto.EmployeeDto;
+import dev.vladflore.javaeezerotohero.dto.EmployeeDto;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;

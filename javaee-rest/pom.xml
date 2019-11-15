@@ -27,6 +27,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.eclipse.microprofile.config</groupId>
+            <artifactId>microprofile-config-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
@@ -77,6 +81,11 @@
             <version>4.4.12</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9.3</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>
             <version>2.21.0</version>
@@ -98,7 +107,7 @@
     </dependencies>
 
     <build>
-        <finalName>emps</finalName>
+        <finalName>app</finalName>
         <plugins>
             <!--            <plugin>-->
             <!--                <groupId>org.jacoco</groupId>-->
@@ -266,47 +275,47 @@
                 <!--                    </excludes>-->
                 <!--                </configuration>-->
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--                <version>2.22.2</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>integration-test</goal>-->
-<!--                            <goal>verify</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                &lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <testSourceDirectory>src/test/java</testSourceDirectory>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <includes>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        <include>**/*CucumberAT.java</include>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    </includes>&ndash;&gt;-->
-<!--                &lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--                &lt;!&ndash;                <executions>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    &lt;!&ndash;&ndash;&gt;-->
-<!--                &lt;!&ndash;                        Ensures that both integration-test and verify goals of the Failsafe Maven&ndash;&gt;-->
-<!--                &lt;!&ndash;                        plugin are executed.&ndash;&gt;-->
-<!--                &lt;!&ndash;                    &ndash;&gt;&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <execution>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        <id>integration-tests</id>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        <goals>&ndash;&gt;-->
-<!--                &lt;!&ndash;                            <goal>integration-test</goal>&ndash;&gt;-->
-<!--                &lt;!&ndash;                            <goal>verify</goal>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        </goals>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        <configuration>&ndash;&gt;-->
-<!--                &lt;!&ndash;                            &lt;!&ndash; Sets the VM argument line used when integration tests are run. &ndash;&gt;&ndash;&gt;-->
-<!--                &lt;!&ndash;                            <argLine>${failsafeArgLine}</argLine>&ndash;&gt;-->
-<!--                &lt;!&ndash;                            &lt;!&ndash;&ndash;&gt;-->
-<!--                &lt;!&ndash;                                Skips integration tests if the value of skip.integration.tests property&ndash;&gt;-->
-<!--                &lt;!&ndash;                                is true&ndash;&gt;-->
-<!--                &lt;!&ndash;                            &ndash;&gt;&ndash;&gt;-->
-<!--                &lt;!&ndash;                            <skipTests>${skip.integration.tests}</skipTests>&ndash;&gt;-->
-<!--                &lt;!&ndash;                        </configuration>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    </execution>&ndash;&gt;-->
-<!--                &lt;!&ndash;                </executions>&ndash;&gt;-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-failsafe-plugin</artifactId>-->
+            <!--                <version>2.22.2</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            <goal>integration-test</goal>-->
+            <!--                            <goal>verify</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                &lt;!&ndash;                <configuration>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    <testSourceDirectory>src/test/java</testSourceDirectory>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    <includes>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        <include>**/*CucumberAT.java</include>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    </includes>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                </configuration>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                <executions>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    &lt;!&ndash;&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        Ensures that both integration-test and verify goals of the Failsafe Maven&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        plugin are executed.&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    &ndash;&gt;&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    <execution>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        <id>integration-tests</id>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        <goals>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            <goal>integration-test</goal>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            <goal>verify</goal>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        </goals>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        <configuration>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            &lt;!&ndash; Sets the VM argument line used when integration tests are run. &ndash;&gt;&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            <argLine>${failsafeArgLine}</argLine>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            &lt;!&ndash;&ndash;&gt;-->
+            <!--                &lt;!&ndash;                                Skips integration tests if the value of skip.integration.tests property&ndash;&gt;-->
+            <!--                &lt;!&ndash;                                is true&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            &ndash;&gt;&ndash;&gt;-->
+            <!--                &lt;!&ndash;                            <skipTests>${skip.integration.tests}</skipTests>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                        </configuration>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                    </execution>&ndash;&gt;-->
+            <!--                &lt;!&ndash;                </executions>&ndash;&gt;-->
+            <!--            </plugin>-->
         </plugins>
     </build>
     <profiles>
@@ -352,14 +361,14 @@
                                     <goal>integration-test</goal>
                                     <goal>verify</goal>
                                 </goals>
-<!--                                <configuration>-->
-<!--                                    <includes>-->
-<!--                                        <include>**/*IT.java</include>-->
-<!--                                    </includes>-->
-<!--                                    <excludes>-->
-<!--                                        <exclude>**/*CucumberAT.java</exclude>-->
-<!--                                    </excludes>-->
-<!--                                </configuration>-->
+                                <!--                                <configuration>-->
+                                <!--                                    <includes>-->
+                                <!--                                        <include>**/*IT.java</include>-->
+                                <!--                                    </includes>-->
+                                <!--                                    <excludes>-->
+                                <!--                                        <exclude>**/*CucumberAT.java</exclude>-->
+                                <!--                                    </excludes>-->
+                                <!--                                </configuration>-->
                             </execution>
                         </executions>
                     </plugin>

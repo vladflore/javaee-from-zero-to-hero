@@ -1,10 +1,10 @@
-package dev.vladflore.zerotohero.mapper;
+package dev.vladflore.javaeezerotohero.mapper;
 
-import dev.vladflore.zerotohero.dto.AddressDto;
-import dev.vladflore.zerotohero.dto.EmployeeDto;
-import dev.vladflore.zerotohero.dto.UpperCaseMapper;
-import dev.vladflore.zerotohero.entity.Address;
-import dev.vladflore.zerotohero.entity.Employee;
+import dev.vladflore.javaeezerotohero.dto.AddressDto;
+import dev.vladflore.javaeezerotohero.dto.EmployeeDto;
+import dev.vladflore.javaeezerotohero.dto.UpperCaseMapper;
+import dev.vladflore.javaeezerotohero.entity.Address;
+import dev.vladflore.javaeezerotohero.entity.Employee;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

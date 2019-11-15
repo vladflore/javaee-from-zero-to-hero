@@ -1,4 +1,4 @@
-package dev.vladflore.zerotohero.entity;
+package dev.vladflore.javaeezerotohero.entity;
 
 public class AddressFactory {
     public static Address createAddress(String street,

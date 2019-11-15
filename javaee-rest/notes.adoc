@@ -1,3 +1,23 @@
+=== TODOs
+* [ ] consume a rest call that returns json
+** [x] nasa rest api
+**  [ ] find ways to convert between json string and java objects
+* [ ] mocking a rest provider
+** [ ] wiremock
+* [ ] contract driven development without spring
+* [x] read properties from a properties file, javaee way
+* [ ] generate code using open-api or such
+
+
+http://www.jsonschema2pojo.org/[json2java]
+
+
+
+
+
+
+
+
 == Notes
 === A note
 ==== Some other note

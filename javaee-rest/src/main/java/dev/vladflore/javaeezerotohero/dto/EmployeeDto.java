@@ -1,4 +1,4 @@
-package dev.vladflore.zerotohero.dto;
+package dev.vladflore.javaeezerotohero.dto;
 
 
 import lombok.Data;

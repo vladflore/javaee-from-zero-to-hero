@@ -1,7 +1,7 @@
-package dev.vladflore.zerotohero.service;
+package dev.vladflore.javaeezerotohero.service;
 
-import dev.vladflore.zerotohero.entity.Employee;
-import dev.vladflore.zerotohero.repository.EmployeeRepository;
+import dev.vladflore.javaeezerotohero.entity.Employee;
+import dev.vladflore.javaeezerotohero.repository.EmployeeRepository;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

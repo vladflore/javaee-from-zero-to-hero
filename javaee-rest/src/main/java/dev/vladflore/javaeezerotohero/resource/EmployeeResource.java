@@ -1,7 +1,7 @@
-package dev.vladflore.zerotohero.resource;
+package dev.vladflore.javaeezerotohero.resource;
 
-import dev.vladflore.zerotohero.mapper.EmployeeMapper;
-import dev.vladflore.zerotohero.service.EmployeeService;
+import dev.vladflore.javaeezerotohero.mapper.EmployeeMapper;
+import dev.vladflore.javaeezerotohero.service.EmployeeService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

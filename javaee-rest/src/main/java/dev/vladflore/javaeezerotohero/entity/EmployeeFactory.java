@@ -1,4 +1,4 @@
-package dev.vladflore.zerotohero.entity;
+package dev.vladflore.javaeezerotohero.entity;
 
 public class EmployeeFactory {
     public static Employee createEmployee(String firstName,

@@ -1,13 +1,13 @@
-import dev.vladflore.zerotohero.dto.EmployeeDto;
-import dev.vladflore.zerotohero.entity.Address;
-import dev.vladflore.zerotohero.entity.AddressFactory;
-import dev.vladflore.zerotohero.entity.Employee;
-import dev.vladflore.zerotohero.mapper.EmployeeMapper;
+import dev.vladflore.javaeezerotohero.dto.EmployeeDto;
+import dev.vladflore.javaeezerotohero.entity.Address;
+import dev.vladflore.javaeezerotohero.entity.AddressFactory;
+import dev.vladflore.javaeezerotohero.entity.Employee;
+import dev.vladflore.javaeezerotohero.mapper.EmployeeMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static dev.vladflore.zerotohero.entity.EmployeeFactory.createEmployee;
-import static dev.vladflore.zerotohero.mapper.EmployeeMapper.SPACE;
+import static dev.vladflore.javaeezerotohero.entity.EmployeeFactory.createEmployee;
+import static dev.vladflore.javaeezerotohero.mapper.EmployeeMapper.SPACE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class EmployeeMapperTest {
@@ -22,7 +22,7 @@ class EmployeeMapperTest {
         EmployeeDto employeeDto = EmployeeMapper.INSTANCE.employeeToEmployeeDto(employee);
 
         assertThat(employeeDto.getFullName()).isEqualTo(employee.getFirstName() + SPACE + employee.getLastName());
-        assertThat(employeeDto.getAge()).isEqualTo(33);
+        assertThat(employeeDto.getAge()).isEqualTo(34);
         assertThat(employeeDto.getSalary()).isEqualTo(employee.getSalary());
 
         assertThat(employeeDto.getAddress().getStreetAndNumber()).isEqualTo(address.getStreet() + SPACE + address.getNumber());
