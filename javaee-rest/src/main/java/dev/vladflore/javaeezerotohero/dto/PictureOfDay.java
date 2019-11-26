@@ -3,6 +3,7 @@ package dev.vladflore.javaeezerotohero.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -15,23 +16,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "title",
         "url"
 })
+@Data
 public class PictureOfDay {
 
     @JsonProperty("copyright")
-    public String copyright;
+    private String copyright;
     @JsonProperty("date")
-    public String date;
+    private String date;
     @JsonProperty("explanation")
-    public String explanation;
+    private String explanation;
     @JsonProperty("hdurl")
-    public String hdurl;
+    private String hdurl;
     @JsonProperty("media_type")
-    public String mediaType;
+    private String mediaType;
     @JsonProperty("service_version")
-    public String serviceVersion;
+    private String serviceVersion;
     @JsonProperty("title")
-    public String title;
+    private String title;
     @JsonProperty("url")
-    public String url;
-
+    private String url;
 }
