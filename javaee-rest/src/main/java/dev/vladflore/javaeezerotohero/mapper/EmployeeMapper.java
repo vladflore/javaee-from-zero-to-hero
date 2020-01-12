@@ -34,7 +34,7 @@ public interface EmployeeMapper {
 //        employeeDto.setInitials(initials.toUpperCase());
     }
 
-    @Mapping(target="initials", expression = "java(employee.getFirstName().charAt(0) + \"\" + employee.getLastName().charAt(0))")
+    @Mapping(target = "initials", expression = "java(employee.getFirstName().charAt(0) + \"\" + employee.getLastName().charAt(0))")
     EmployeeDto employeeToEmployeeDto(Employee employee);
 
     @Mapping(target = "plz", source = "postalCode")
