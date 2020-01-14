@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.EntityManager;
@@ -10,10 +10,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PersistenceTest {
 
     @Test
-    @Disabled
-    void test() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default-pu");
-        EntityManager em = emf.createEntityManager();
-        assertThat(em).isNotNull();
+    @DisplayName("test if entity manager is available")
+    void testEntityManagerAvailable() {
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default-pu");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        assertThat(entityManager).isNotNull();
     }
+
 }
