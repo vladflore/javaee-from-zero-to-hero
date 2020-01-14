@@ -5,6 +5,7 @@
     <changeSet id="1" author="vlad">
         <createTable tableName="employees">
             <column name="name" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

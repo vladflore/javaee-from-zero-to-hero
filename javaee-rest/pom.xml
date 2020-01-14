@@ -17,6 +17,7 @@
         <!--        <skip.unit.tests>false</skip.unit.tests>-->
         <!--        <skip.integration.tests>false</skip.integration.tests>-->
         <cucumber.version>4.2.6</cucumber.version>
+        <hibernate.version>5.2.4.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -26,11 +27,11 @@
             <version>8.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.2.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.eclipse.persistence</groupId>-->
+<!--            <artifactId>javax.persistence</artifactId>-->
+<!--            <version>2.2.1</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
@@ -127,25 +128,26 @@
         <finalName>app</finalName>
         <plugins>
 
-<!--            <plugin>-->
-<!--                <groupId>org.liquibase</groupId>-->
-<!--                <artifactId>liquibase-maven-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <changeLogFile>src/main/resources/liquibase/master.xml</changeLogFile>-->
-<!--                    <driver>oracle.jdbc.driver.OracleDriver</driver>-->
-<!--                    <url>jdbc:oracle:thin:@localhost:32771:orclcdb</url>-->
-<!--                    <username>javaeeadmin</username>-->
-<!--                    <password>welcome1</password>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>process-resources</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>update</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <changeLogFile>src/main/resources/liquibase/master.xml</changeLogFile>
+                    <driver>oracle.jdbc.driver.OracleDriver</driver>
+                    <url>jdbc:oracle:thin:@localhost:1521:xe</url>
+                    <username>javaeeadmin</username>
+                    <password>welcome1</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>dropAll</goal>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <!--            <plugin>-->
             <!--                <groupId>org.jacoco</groupId>-->

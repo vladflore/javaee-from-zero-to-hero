@@ -1,25 +1,31 @@
-<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="default-pu" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
-    <!-- By default your mappings can be defined in orm.xml file, -->
-    <!-- which is discovered automatically.                       -->
-<!--    <mapping-file>META-INF/my-mappings.xml</mapping-file>-->
+        <!-- By default your mappings can be defined in orm.xml file, -->
+        <!-- which is discovered automatically.                       -->
+        <!--    <mapping-file>META-INF/my-mappings.xml</mapping-file>-->
 
-<!--    <jar-file>my-additional-jar.jar</jar-file>-->
+        <!--    <jar-file>my-additional-jar.jar</jar-file>-->
 
-    <!-- Enables auto discovery of persistent classes, -->
-    <!-- otherwise they must be listed using <class>  -->
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <!-- Enables auto discovery of persistent classes, -->
+        <!-- otherwise they must be listed using <class>  -->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
-    <properties>
-        <property name="javax.persistence.jdbc.driver" value="racle.jdbc.OracleDriver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32771:orclcdb"/>
-        <property name="javax.persistence.jdbc.user" value="javaeeadmin"/>
-        <property name="javax.persistence.jdbc.password" value="welcome1"/>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+            <property name="javax.persistence.jdbc.user" value="javaeeadmin"/>
+            <property name="javax.persistence.jdbc.password" value="welcome1"/>
 
-        <!-- configure logging -->
-        <property name="eclipselink.logging.level" value="INFO"/>
-        <property name="eclipselink.logging.level.sql" value="FINE"/>
-        <property name="eclipselink.logging.parameters" value="true"/>
-    </properties>
-</persistence-unit>
+            <!-- configure logging -->
+            <property name="eclipselink.logging.level" value="INFO"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
