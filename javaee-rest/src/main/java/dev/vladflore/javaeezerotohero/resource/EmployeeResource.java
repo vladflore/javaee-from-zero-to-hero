@@ -5,10 +5,7 @@ import dev.vladflore.javaeezerotohero.mapper.EmployeeMapper;
 import dev.vladflore.javaeezerotohero.service.EmployeeService;
 
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Collections;
@@ -21,7 +18,8 @@ public class EmployeeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response retrieveEmployeesByGender(@QueryParam("gender") Gender gender) {
+//    public Response retrieveEmployeesByGender(@QueryParam("gender") Gender gender) {
+    public Response retrieveEmployeesByGender(@QueryParam("gender") @DefaultValue("MALE") Gender gender) {
         if (gender == null) {
             return Response.ok(Collections.emptyList()).build();
         }
