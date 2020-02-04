@@ -1,5 +1,6 @@
 package dev.vladflore.javaeezerotohero.resource;
 
+import dev.vladflore.javaeezerotohero.entity.Gender;
 import dev.vladflore.javaeezerotohero.mapper.EmployeeMapper;
 import dev.vladflore.javaeezerotohero.service.EmployeeService;
 
@@ -7,8 +8,10 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
 
 @Path("employees")
 public class EmployeeResource {
@@ -18,8 +21,11 @@ public class EmployeeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response retrieveEmployees() {
-        return Response.ok(EmployeeMapper.INSTANCE.employeeToEmployeeDto(employeeService.loadEmployees())).build();
+    public Response retrieveEmployeesByGender(@QueryParam("gender") Gender gender) {
+        if (gender == null) {
+            return Response.ok(Collections.emptyList()).build();
+        }
+        return Response.ok(EmployeeMapper.INSTANCE.employeeToEmployeeDto(employeeService.loadEmployees(gender))).build();
     }
 
 }

@@ -10,14 +10,16 @@ public class Employee extends Person {
     private Integer yearOfBirth;
     private Integer salary;
     private Address address;
+    private Gender gender;
 
     @Builder(toBuilder = true)
-    public Employee(Integer dayOfBirth, Integer monthOfBirth, Integer yearOfBirth, Integer salary, Address address, String firstName, String lastName) {
+    public Employee(Integer dayOfBirth, Integer monthOfBirth, Integer yearOfBirth, Integer salary, Address address, String firstName, String lastName, Gender gender) {
         super(firstName, lastName);
         this.dayOfBirth = dayOfBirth;
         this.monthOfBirth = monthOfBirth;
         this.yearOfBirth = yearOfBirth;
         this.salary = salary;
         this.address = address;
+        this.gender = gender;
     }
 }

@@ -1,6 +1,7 @@
 package dev.vladflore.javaeezerotohero.service;
 
 import dev.vladflore.javaeezerotohero.entity.Employee;
+import dev.vladflore.javaeezerotohero.entity.Gender;
 import dev.vladflore.javaeezerotohero.repository.EmployeeRepository;
 
 import javax.ejb.Stateless;
@@ -13,7 +14,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Inject
     private EmployeeRepository employeeRepository;
 
-    public List<Employee> loadEmployees() {
-        return employeeRepository.loadEmployees();
+    public List<Employee> loadEmployees(Gender gender) {
+        return employeeRepository.loadEmployeesByGender(gender);
     }
 }
