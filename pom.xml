@@ -34,7 +34,7 @@
             <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
-                <version>3.8.0</version>
+                <version>4.8.0</version>
             </dependency>
             <!-- go to https://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html and download the jar then-->
             <!-- add the jar to the maven repository using: mvn install:install-file -Dfile=/home/vlad/vladflore.dev/sandbox/ojdbc8.jar -DgroupId=com.oracle.jdbc -DartifactId=ojdbc8 -Dversion=19.3.0 -Dpackaging=jar-->
